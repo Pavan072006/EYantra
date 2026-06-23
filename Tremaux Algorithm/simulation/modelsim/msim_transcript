@@ -1,0 +1,120 @@
+# Reading pref.tcl
+# do t2c_maze_explorer_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/M\ Pavan\ Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/code {C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/code/t2c_maze_explorer.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:01:54 on Nov 16,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/code" C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/code/t2c_maze_explorer.v 
+# -- Compiling module t2c_maze_explorer
+# 
+# Top level modules:
+# 	t2c_maze_explorer
+# End time: 13:01:54 on Nov 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/M\ Pavan\ Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/.test {C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/.test/tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:01:54 on Nov 16,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/.test" C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/.test/tb.v 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 13:01:54 on Nov 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 13:01:54 on Nov 16,2025
+# Loading work.tb
+# Loading work.t2c_maze_explorer
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Dead ends at positions:
+# 0 5 11 19 34 45 48 64 80 
+# 
+# Step 0: Pos=[4, 8] Facing=N Walls=101 Move=001
+# Step 1: Pos=[4, 7] Facing=N Walls=011 Move=010
+# Step 2: Pos=[3, 7] Facing=W Walls=011 Move=010
+# Step 3: Pos=[3, 8] Facing=S Walls=110 Move=011
+# Step 4: Pos=[2, 8] Facing=W Walls=101 Move=001
+# Step 5: Pos=[1, 8] Facing=W Walls=101 Move=001
+# Step 6: Pos=[0, 8] Facing=W Walls=110 Move=011
+# Step 7: Pos=[0, 7] Facing=N Walls=101 Move=001
+# Step 8: Pos=[0, 6] Facing=N Walls=110 Move=011
+# Step 9: Pos=[1, 6] Facing=E Walls=011 Move=010
+# Step 10: Pos=[1, 5] Facing=N Walls=001 Move=010
+# Step 11: Pos=[0, 5] Facing=W Walls=111 Move=100
+# Step 12: Pos=[1, 5] Facing=E Walls=010 Move=010
+# Step 13: Pos=[1, 4] Facing=N Walls=010 Move=011
+# Step 14: Pos=[2, 4] Facing=E Walls=110 Move=011
+# Step 15: Pos=[2, 5] Facing=S Walls=101 Move=001
+# Step 16: Pos=[2, 6] Facing=S Walls=001 Move=010
+# Step 17: Pos=[3, 6] Facing=E Walls=001 Move=001
+# Step 18: Pos=[4, 6] Facing=E Walls=001 Move=010
+# Step 19: Pos=[4, 5] Facing=N Walls=101 Move=001
+# Step 20: Pos=[4, 4] Facing=N Walls=011 Move=010
+# Step 21: Pos=[3, 4] Facing=W Walls=110 Move=011
+# Step 22: Pos=[3, 3] Facing=N Walls=110 Move=011
+# Step 23: Pos=[4, 3] Facing=E Walls=101 Move=001
+# Step 24: Pos=[5, 3] Facing=E Walls=110 Move=011
+# Step 25: Pos=[5, 4] Facing=S Walls=101 Move=001
+# Step 26: Pos=[5, 5] Facing=S Walls=011 Move=010
+# Step 27: Pos=[6, 5] Facing=E Walls=101 Move=001
+# Step 28: Pos=[7, 5] Facing=E Walls=110 Move=011
+# Step 29: Pos=[7, 6] Facing=S Walls=011 Move=010
+# Step 30: Pos=[8, 6] Facing=E Walls=011 Move=010
+# Step 31: Pos=[8, 5] Facing=N Walls=101 Move=001
+# Step 32: Pos=[8, 4] Facing=N Walls=101 Move=001
+# Step 33: Pos=[8, 3] Facing=N Walls=101 Move=001
+# Step 34: Pos=[8, 2] Facing=N Walls=101 Move=001
+# Step 35: Pos=[8, 1] Facing=N Walls=001 Move=010
+# Step 36: Pos=[7, 1] Facing=W Walls=011 Move=010
+# Step 37: Pos=[7, 2] Facing=S Walls=110 Move=011
+# Step 38: Pos=[6, 2] Facing=W Walls=011 Move=010
+# Step 39: Pos=[6, 3] Facing=S Walls=101 Move=001
+# Step 40: Pos=[6, 4] Facing=S Walls=011 Move=010
+# Step 41: Pos=[7, 4] Facing=E Walls=011 Move=010
+# Step 42: Pos=[7, 3] Facing=N Walls=111 Move=100
+# Step 43: Pos=[7, 4] Facing=S Walls=110 Move=011
+# Step 44: Pos=[6, 4] Facing=W Walls=110 Move=011
+# Step 45: Pos=[6, 3] Facing=N Walls=101 Move=001
+# Step 46: Pos=[6, 2] Facing=N Walls=110 Move=011
+# Step 47: Pos=[7, 2] Facing=E Walls=011 Move=010
+# Step 48: Pos=[7, 1] Facing=N Walls=110 Move=011
+# Step 49: Pos=[8, 1] Facing=E Walls=010 Move=010
+# Step 50: Pos=[8, 0] Facing=N Walls=011 Move=010
+# Step 51: Pos=[7, 0] Facing=W Walls=101 Move=001
+# Step 52: Pos=[6, 0] Facing=W Walls=011 Move=010
+# Step 53: Pos=[6, 1] Facing=S Walls=110 Move=011
+# Step 54: Pos=[5, 1] Facing=W Walls=011 Move=010
+# Step 55: Pos=[5, 2] Facing=S Walls=110 Move=011
+# Step 56: Pos=[4, 2] Facing=W Walls=110 Move=011
+# Step 57: Pos=[4, 1] Facing=N Walls=101 Move=001
+# Step 58: Pos=[4, 0] Facing=N Walls=100 Move=001
+# Maze exited successfully!
+# steps taken: 58
+# Dead end visit bits:
+# Position 34
+# Position 45
+# Total dead ends visited: 2 out of 9
+# some dead ends not explored.
+# ** Note: $stop    : C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/.test/tb.v(219)
+#    Time: 1220 ns  Iteration: 0  Instance: /tb
+# Break in Module tb at C:/Users/M Pavan Naveen/Downloads/mb_2591_t2c/mb_2591_t2c/t2c_maze_explorer/.test/tb.v line 219
+# End time: 14:18:57 on Nov 16,2025, Elapsed time: 1:17:03
+# Errors: 0, Warnings: 0
