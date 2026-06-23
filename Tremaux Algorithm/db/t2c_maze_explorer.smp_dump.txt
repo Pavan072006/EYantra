@@ -1,0 +1,8 @@
+
+State Machine - |t2c_maze_explorer|move_next_reg
+Name move_next_reg.011 move_next_reg.010 move_next_reg.001 move_next_reg.000 move_next_reg.100 
+move_next_reg.000 0 0 0 0 0 
+move_next_reg.001 0 0 1 1 0 
+move_next_reg.010 0 1 0 1 0 
+move_next_reg.011 1 0 0 1 0 
+move_next_reg.100 0 0 0 1 1 
