@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at t2c_maze_explorer.v(7): always construct contains both blocking and non-blocking assignments File: D:/eyantra/projects/t2c_maze_explorer/t2c_maze_explorer/code/t2c_maze_explorer.v Line: 7
