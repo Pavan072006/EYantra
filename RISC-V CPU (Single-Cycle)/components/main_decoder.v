@@ -4,7 +4,7 @@
 module main_decoder (
     input  [6:0] op,
     input  [2:0] funct3,
-    input        Zero,ALUR31,
+    input EQ, LTS, LTU,
     output [1:0] ResultSrc,
     output       MemWrite, Branch, ALUSrc,
     output       RegWrite, Jump, Jalr,
@@ -25,12 +25,12 @@ always @(*) begin
         7'b1100011: begin //branch
             controls = 11'b0_10_0_0_00_01_0_0; 
             case (funct3)
-                3'b000: TakeBranch = Zero;
-                3'b001: TakeBranch = !Zero;
-                3'b101: TakeBranch = !ALUR31;
-                3'b100: TakeBranch = ALUR31;//blt
-                3'b110: TakeBranch = ALUR31;//bltu
-                3'b111: TakeBranch = !ALUR31;//bgeu
+                3'b000: TakeBranch =  EQ;   // beq
+                3'b001: TakeBranch = !EQ;   // bne
+                3'b100: TakeBranch =  LTS;  // blt
+                3'b101: TakeBranch = !LTS;  // bge
+                3'b110: TakeBranch =  LTU;  // bltu
+                3'b111: TakeBranch = !LTU;  // bgeu
 
             endcase
         end
