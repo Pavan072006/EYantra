@@ -8,7 +8,7 @@ module datapath (
     input [1:0]   ImmSrc,
     input [3:0]   ALUControl,
     input         Jalr,
-    output        Zero,ALUR31,
+    output EQ, LTS, LTU,
     output [31:0] PC,
     input  [31:0] Instr,
     output [31:0] Mem_WrAddr, Mem_WrData,
@@ -18,6 +18,7 @@ module datapath (
 
 wire [31:0] PCNext, PCJalr, PCPlus4, PCTarget, Auipc , lAuiPC;
 wire [31:0] ImmExt, SrcA, SrcB, WriteData, ALUResult;
+wire alu_zero_unused;
 
 // next PC logic
 mux2 #(32)     pcmux(PCPlus4, PCTarget, PCSrc, PCNext);
@@ -33,14 +34,16 @@ imm_extend     ext (Instr[31:7], ImmSrc, ImmExt);
 
 // ALU logic
 mux2 #(32)     srcbmux(WriteData, ImmExt, ALUSrc, SrcB);
-alu            alu (SrcA, SrcB, ALUControl, ALUResult, Zero);
+alu            alu (SrcA, SrcB, ALUControl, ALUResult, alu_zero_unused);
 adder #(32)    auipcadder ({Instr[31:12],12'b0},PC, Auipc);
 mux2 #(32)     lauipcmux (Auipc, {Instr[31:12],12'b0},Instr[5],lAuiPC);
 
 // Result source
 mux4 #(32)     resultmux(ALUResult, ReadData, PCPlus4, lAuiPC, ResultSrc, Result);
 
-assign ALUR31 = ALUResult[31];
+assign EQ  = (SrcA == WriteData);                     // beq  / bne
+assign LTS = ($signed(SrcA) < $signed(WriteData));    // blt  / bge
+assign LTU = (SrcA < WriteData);                      // bltu / bgeu
 assign Mem_WrData = WriteData;
 assign Mem_WrAddr = ALUResult;
 
