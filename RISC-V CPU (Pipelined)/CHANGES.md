@@ -1,4 +1,4 @@
-# Pipelining the RV32I core — change log
+# Pipelining the RV32I core 
 
 Converts the single-cycle core into a classic 5-stage pipeline
 (**IF → ID → EX → MEM → WB**) with full forwarding, load-use stalling,
