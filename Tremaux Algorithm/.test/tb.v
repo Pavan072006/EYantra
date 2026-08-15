@@ -185,7 +185,7 @@ module tb;
         for (idx = 0; idx < MAX_STEPS; idx = idx + 1) begin
             // compute walls relative to facing and present them to UUT
             {left, mid, right} = get_walls(map_data[bot_pos], bot_facing);
-            #20; // wait for move to be computed by the FSM
+            @(posedge clk); #1;
 
             if (debug) begin
                 px = bot_pos % 9; // column (x)
