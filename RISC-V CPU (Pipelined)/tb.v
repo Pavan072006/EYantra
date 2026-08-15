@@ -14,6 +14,7 @@ module tb;
 
   localparam END_PC   = 32'h138;   // final infinite-loop instruction
   localparam MAX_CYC  = 2000;
+  localparam DRAIN    = 5;         // cycles needed to flush D/E/M/W
 
   reg  clk = 0, reset = 1;
   wire        MemWrite;
@@ -49,6 +50,7 @@ module tb;
 
     if (PC == END_PC) begin
       done = 1;
+      repeat (DRAIN) @(posedge clk);
       report;
     end
 
