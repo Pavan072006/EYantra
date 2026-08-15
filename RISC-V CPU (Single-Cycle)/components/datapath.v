@@ -8,7 +8,7 @@ module datapath (
     input [1:0]   ImmSrc,
     input [3:0]   ALUControl,
     input         Jalr,
-    output EQ, LTS, LTU,
+    output        EQ, LTS, LTU,
     output [31:0] PC,
     input  [31:0] Instr,
     output [31:0] Mem_WrAddr, Mem_WrData,
