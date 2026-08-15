@@ -5,7 +5,7 @@ module controller (
     input [6:0]  op,
     input [2:0]  funct3,
     input        funct7b5,
-    input        Zero,ALUR31,
+    input        EQ, LTS, LTU,
     output       [1:0] ResultSrc,
     output       MemWrite,
     output       PCSrc, ALUSrc,
@@ -17,7 +17,7 @@ module controller (
 wire [1:0] ALUOp;
 wire       Branch;
 
-main_decoder    md (op, funct3, Zero, ALUR31, ResultSrc, MemWrite, Branch,
+main_decoder    md (op, funct3, EQ, LTS, LTU, ResultSrc, MemWrite, Branch,
                     ALUSrc, RegWrite, Jump, Jalr, ImmSrc, ALUOp);
 
 alu_decoder     ad (op[5], funct3, funct7b5, ALUOp, ALUControl);
