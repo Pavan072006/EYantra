@@ -3,6 +3,7 @@
 module tb;
     // set to 1 to enable debug prints
     parameter debug = 1;
+	parameter MAX_STEPS = 255;
 
     reg clk, rst_n;
     reg left, mid, right;
@@ -176,11 +177,12 @@ module tb;
         bot_facing = 2'b00; // north
         bot_pos = 7'd76;    // starting position
 
-        rst_n = 0; #20;
-        rst_n = 1; #20;
+        {left, mid, right} = get_walls(map_data[bot_pos], bot_facing);
+		rst_n = 0; #20;
+		@(negedge clk) rst_n = 1;
 
         // Main simulation loop (we use idx as step counter too)
-        for (idx = 0; idx < 250; idx = idx + 1) begin
+        for (idx = 0; idx < MAX_STEPS; idx = idx + 1) begin
             // compute walls relative to facing and present them to UUT
             {left, mid, right} = get_walls(map_data[bot_pos], bot_facing);
             #20; // wait for move to be computed by the FSM
